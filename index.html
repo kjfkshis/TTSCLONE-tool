@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimax Controller - Web Automation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://www.minimax.io/favicon.ico">
+</head>
+<body>
+
+    <div id="activation-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>👑 Kích hoạt VIP</h2>
+            <p>Gửi mã máy bên dưới cho Admin để mở khóa không giới hạn.</p>
+            
+            <div class="machine-box">
+                <input type="text" id="machine-id" readonly value="Đang tạo...">
+                <button id="btn-copy">📋 Copy</button>
+            </div>
+
+            <hr>
+            <p>Sau khi Admin báo đã kích hoạt, bấm nút dưới:</p>
+            <button id="btn-check-license" class="btn-primary">🔄 Kiểm tra Kích hoạt</button>
+            <p id="msg-status"></p>
+        </div>
+    </div>
+
+    <div id="main-app">
+        <div class="container">
+            
+            <div class="column col-1">
+                <div class="header">
+                    <div class="logo">MINIMAX TOOL</div>
+                    <div id="quota-badge" class="badge">Trial: 10k ký tự</div>
+                </div>
+                <div class="content">
+                    <button id="btn-upgrade" class="btn-vip">👑 Nâng cấp VIP</button>
+                    
+                    <div class="section">
+                        <label>File Mẫu:</label>
+                        <input type="file" id="audio-input" accept=".mp3,.wav">
+                    </div>
+                    
+                    <div class="section">
+                        <label>Ngôn Ngữ:</label>
+                        <select id="lang-select">
+                            <option value="Vietnamese">Vietnamese</option>
+                            <option value="English">English</option>
+                        </select>
+                    </div>
+
+                    <div class="log-box" id="log-container">
+                        <div class="log-entry">[System] Sẵn sàng...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column col-2">
+                <div class="header"><h3>Soạn Thảo</h3></div>
+                <div class="content">
+                    <textarea id="main-textarea" placeholder="Nhập văn bản vào đây..."></textarea>
+                    
+                    <div class="stats-bar">
+                        <span id="char-count">0 / 10,000 ký tự</span>
+                    </div>
+
+                    <div class="actions">
+                        <button id="btn-start" class="btn-success">▶️ Bắt đầu tạo</button>
+                    </div>
+                    
+                    <div id="warning-box" class="hidden">
+                        ⚠️ Quá giới hạn miễn phí! Vui lòng nâng cấp VIP.
+                    </div>
+                </div>
+            </div>
+
+            <div class="column col-3">
+                <div class="header"><h3>Tiện Ích</h3></div>
+                <div class="content">
+                    <button class="btn-normal">📂 Kho Âm Thanh</button>
+                    <button class="btn-normal">📚 Lịch Sử</button>
+                    <div class="note-box">
+                        💡 Lưu ý: Nên chia nhỏ văn bản dưới 50k ký tự để tránh lỗi.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
